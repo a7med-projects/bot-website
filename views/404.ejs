@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="media-query.css">
+        <script src="https://kit.fontawesome.com/95fb04c6ee.js" crossorigin="anonymous"></script>
+        <title> <%= client.user.username %> - Not Found </title>
+    </head>
+
+    <body>
+        <!-- nav bar -->
+        <nav class="default-nav">
+            <img src=" <%= client.user.displayAvatarURL({ dynamic : true }) %> " alt="">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+                <li><a href="/commands"><i class="fas fa-terminal"></i>&nbsp;Commands</a></li>
+                <li><a href="/developers"><i class="fas fa-code"></i>&nbsp;developers</a></li>
+                <% if(!user) { %>
+                    <li><a href="/login"><i class="fas fa-sign-in-alt"></i>&nbsp;login</a></li>
+                <% } %>
+                <% if(user){ %>
+                    <% if(config.bot.owners.includes(user.id)){ %>
+                        <li><a href="/admin-panel"><i class="fas fa-cogs"></i>&nbsp;admin panel</a></li>
+                    <% } %>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>&nbsp;logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/commands"><i class="fas fa-terminal"></i>&nbsp;cmd's</a></li>
+                <li><a href="/developers"><i class="fas fa-code"></i>&nbsp;dev's</a></li>
+                <% if(!user) { %>
+                    <li><a href="/login"><i class="fas fa-sign-in-alt"></i>&nbsp;</a></li>
+                <% } %>
+                <% if(user){ %>
+                    <% if(config.bot.owners.includes(user.id)){ %>
+                        <li><a href="/admin-panel"><i class="fas fa-cogs"></i></a></li>
+                    <% } %>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+                <% } %>
+            </ul>
+        </nav>
+            <div class="box">
+                <i class="fas fa-exclamation-triangle fa-10x"></i>
+                <br>
+                <h1>Page Not Found</h1>
+                <br>
+                <p>return to home</p>
+                <br>
+                <a href="/"><button><i class="fas fa-home"></i>&nbsp;Home</button></a>
+            </div> 
+            <footer>
+                <p>all rights reserved for <a href="https://www.instagram.com/1._.a7med._.1">A7MED</a></p>
+            </footer>
+    </body>
+</html>

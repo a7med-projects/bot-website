@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" >
+        <link rel="stylesheet" href="media-query.css">
+        <script src="https://kit.fontawesome.com/95fb04c6ee.js" crossorigin="anonymous"></script>
+        <title> <%= client.user.username %> - developers </title>
+    </head>
+    <body>
+        <!-- nav bar -->
+        <nav class="default-nav">
+            <img src=" <%= client.user.displayAvatarURL({ dynamic : true }) %> " alt="">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+                <li><a href="/commands"><i class="fas fa-terminal"></i>&nbsp;Commands</a></li>
+                <li><a href="/developers"><i class="fas fa-code"></i>&nbsp;developers</a></li>
+                <% if(!user) { %>
+                    <li><a href="/login"><i class="fas fa-sign-in-alt"></i>&nbsp;login</a></li>
+                <% } %>
+                <% if(user){ %>
+                    <% if(config.bot.owners.includes(user.id)){ %>
+                        <li><a href="/admin-panel"><i class="fas fa-cogs"></i>&nbsp;admin panel</a></li>
+                    <% } %>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>&nbsp;logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/commands"><i class="fas fa-terminal"></i>&nbsp;cmd's</a></li>
+                <li><a href="/developers"><i class="fas fa-code"></i>&nbsp;dev's</a></li>
+                <% if(!user) { %>
+                    <li><a href="/login"><i class="fas fa-sign-in-alt"></i>&nbsp;</a></li>
+                <% } %>
+                <% if(user){ %>
+                    <% if(config.bot.owners.includes(user.id)){ %>
+                        <li><a href="/admin-panel"><i class="fas fa-cogs"></i></a></li>
+                    <% } %>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></li>
+                <% } %>
+            </ul>
+        </nav>
+        <div class="dev-content">
+            <div class="info">
+                <br>
+                <img src="https://cdn.discordapp.com/avatars/744183251102335007/9fc32ef4a3649d86884f2b4cfc7f4a48.gif?size=1024" alt="">
+                <br>
+                <h1>A7MED#6694</h1>
+                <p>website developer</p>
+                <div class="links">
+                    <a href="https://www.instagram.com/1._.a7med._.1/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://github.com/A7MED6969" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="info">
+                <br>
+                <img src="https://cdn.discordapp.com/avatars/744183251102335007/9fc32ef4a3649d86884f2b4cfc7f4a48.gif?size=1024" alt="">
+                <br>
+                <h1>developer 2</h1>
+                <p>developer info</p>
+                <div class="links">
+                    <a href="https://www.instagram.com/1._.a7med._.1/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://github.com/A7MED6969" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="info">
+                <br>
+                <img src="https://cdn.discordapp.com/avatars/744183251102335007/9fc32ef4a3649d86884f2b4cfc7f4a48.gif?size=1024" alt="">
+                <br>
+                <h1>developer 3</h1>
+                <p>developer info</p>
+                <div class="links">
+                    <a href="https://www.instagram.com/1._.a7med._.1/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://github.com/A7MED6969" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>all rights reserved for <a href="https://www.instagram.com/1._.a7med._.1">A7MED</a></p>
+        </footer>
+    </body>
+</html>
+
